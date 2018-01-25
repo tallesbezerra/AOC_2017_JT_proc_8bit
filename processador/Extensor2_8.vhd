@@ -10,10 +10,8 @@ port(	input		: in std_logic_vector(nBits-6 downto 0);
 end Extensor2_8;
 
 architecture ex8bits_behav of Extensor2_8 is
-	signal aux8b : std_logic_vector(nBits downto 0);
+signal aux8b : std_logic_vector(nBits downto 0);
+	
 begin
-	process(input)
-		begin
-			output <= std_logic_vector(resize(unsigned(input), aux8b'length));
-	end process;
+	output <= std_logic_vector(resize(unsigned(input), aux8b'length));
 end ex8bits_behav;
